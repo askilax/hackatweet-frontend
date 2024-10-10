@@ -18,9 +18,12 @@ function Tweets() {
         <h1 className={styles.title}>
           Home
         </h1>
-        <div>
+        <div className={styles.Input}>
           <input className={styles.textHome} type='text' placeholder="What's up" maxLength={maxLength} onChange={handleChange} />
-          <span>{value.length}/{maxLength}</span>
+        </div>
+        <div className={styles.pBtn}>
+          <p className={styles.p}>{value.length}/{maxLength}</p>
+          <button className={styles.btn1}>Tweet</button>
         </div>
       </main>
     </div>

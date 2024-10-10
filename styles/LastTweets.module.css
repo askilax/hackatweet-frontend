@@ -1,69 +1,36 @@
-.center-panel {
-    width: 50%;
-    border-left: 1px solid #38444d;
-    border-right: 1px solid #38444d;
-    padding: 20px;
-  }
-  
-  .center-panel h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .search-bar {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  
-  .search-bar input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 30px;
-    background-color: #192734;
-    border: 1px solid #38444d;
-    color: white;
-  }
-  
-  .search-bar button {
-    background-color: #1da1f2;
-    border: none;
-    padding: 10px 20px;
-    margin-left: 10px;
-    border-radius: 30px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .tweet-list {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .tweet {
-    background-color: #192734;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-  }
-  
-  .tweet .user-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .tweet .user-info img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .tweet .user-info span {
-    font-weight: bold;
-  }
-  
-  .tweet p {
-    font-size: 16px;
-    color: #eeeeee;
-  }
+.tweet {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid grey;
+  width: 49.8vw;
+  height: 30vh;
+  padding: 10px;
+}
+
+.imgProfil {
+  height: 8vh;
+  width: 5vw;
+  border-radius: 250px;
+  margin-left: 1.5vw;
+  margin-top: 2.5vh;
+}
+
+.user-info {
+  display: flex;
+}
+
+.name {
+  color: white;
+}
+
+.username {
+  color: grey;
+}
+
+.data {
+  color: grey;
+}
+
+.p {
+  color: white;
+}

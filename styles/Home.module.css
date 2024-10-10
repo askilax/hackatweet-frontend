@@ -26,6 +26,25 @@
   background-color: #151D27;
   height: 75vh;
   border-top: 1px solid grey;
+  overflow-y: scroll; 
+}
+
+.containerLastTweets::-webkit-scrollbar {
+  width: 1px;
+}
+
+.containerLastTweets::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+
+.containerLastTweets::-webkit-scrollbar-thumb {
+  background: #1DA1F2;
+  border-radius: 10px;
+}
+
+.containerLastTweets::-webkit-scrollbar-thumb:hover {
+  background: #0d8aec;
 }
 
 .containerTrends {

@@ -1,4 +1,5 @@
 import styles from '../styles/Home.module.css';
+import LastTweets from './LastTweets';
 import Tweets from './Tweets';
 
 
@@ -35,7 +36,9 @@ function Home() {
           <Tweets />
         </div>
         <div className={styles.containerLastTweets}>
-          containerLastTweets
+          <LastTweets />
+          <LastTweets />
+          <LastTweets />
         </div>
       </div>
       <div className={styles.containerTrends}>
