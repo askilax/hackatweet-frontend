@@ -19,7 +19,7 @@ function Login() {
 
   return (
     <div className={styles.logincontainer}>
-        <div><Image src={logotweeter.png} alt={light-blue background} width={600} height={314} /></div>
+        <div className={styles.background}></div>
       <h1>See what's happening</h1>
       <p>Join Hackatweet today.</p>
       <button onClick={() => handleOpenModal("signup")} className={styles.button}>Sign up</button>
