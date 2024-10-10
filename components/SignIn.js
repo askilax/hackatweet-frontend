@@ -17,7 +17,7 @@ function SignIn({ closeModal }) {
     const data = await response.json();
     if (data.token) {
       localStorage.setItem("token", data.token);
-      window.location.href = "/home";
+      window.location.href = "/Home";
     }
   };
 

@@ -4,6 +4,7 @@ import { useState } from 'react';
 function Tweets() {
 const [value,SetValue] = useState('')
 const maxLength = 280;
+
 const handleChange = ()=> {
     if(e.target.value.length < maxLength){
         SetValue(e.target.value);
@@ -16,8 +17,8 @@ const handleChange = ()=> {
         <h1 className={styles.title}>
           Home
         </h1>
-        <input />
-        <span></span>
+        <input type='text' placeholder="What's up" maxLength={maxLength} onChange={handleChange} />
+        <span>{value.length}/{maxLength}</span>
       </main>
     </div>
   );

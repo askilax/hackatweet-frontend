@@ -27,7 +27,7 @@ function Home() {
       </div>
       <div className={styles.containerTweetAndLast}>
         <div className={styles.containerTweet}>
-          containerTweet
+          <Tweet/>
         </div>
         <div className={styles.containerLastTweets}>
           containerLastTweets
