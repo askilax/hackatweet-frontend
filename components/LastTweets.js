@@ -1,14 +1,16 @@
 import styles from '../styles/LastTweets.module.css';
 
-function LastTweets() {
+const LastTweets = ({ tweet }) => {
   return (
-    <div>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          
-        </h1>
-      </main>
+    <div className="tweet">
+      <div className="user-info">
+        <img src={tweet.user.avatar} alt="avatar" />
+        <span>{tweet.user.name} @{tweet.user.handle}</span>
+      </div>
+      <p>{tweet.content}</p>
     </div>
   );
-}
+};
+
+
 export default LastTweets;
