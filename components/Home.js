@@ -10,6 +10,7 @@ function Home() {
       </main>
     </div>
   );
+
   
 }
 
