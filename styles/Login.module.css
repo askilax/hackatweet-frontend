@@ -1,11 +1,20 @@
+.main {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
 
 .logincontainer {
     text-align: center;
     color: white;
     margin-top: 100px;
+    width: 62vw;
+    height: 100vh;
 }
 
 .button {
+    display: flex;
     margin: 10px;
     padding: 10px 20px;
     border: none;
@@ -24,6 +33,17 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.background {
-    background: url('../public/imageLeft.png');
+.backgroundlogin {
+    background: url('/imageLeft.png');
+    background-repeat: no-repeat;
+    width: 38vw;
+    height: 100vh;
+}
+
+.backgroundlogo {
+    background: url('/logotweeter.png');
+    width: 10vw;
+    height: 30vh;
+    justify-content: left;
+    align-items: center;
 }

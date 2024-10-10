@@ -38,7 +38,6 @@ function SignIn({ closeModal }) {
           onChange={handleInputChange}
         />
         <button type="submit">Sign In</button>
-        <button onClick={closeModal}>Cancel</button>
       </form>
     </div>
   );

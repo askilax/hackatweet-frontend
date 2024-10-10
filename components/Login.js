@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from '../styles/Login.module.css';
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
-import Image from 'next/image';
 
 function Login() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,8 +17,10 @@ function Login() {
   };
 
   return (
+    <main className={styles.main}>
+        <div className={styles.backgroundlogin}></div>
+        <div className={styles.backgroundlogo}></div>
     <div className={styles.logincontainer}>
-        <div className={styles.background}></div>
       <h1>See what's happening</h1>
       <p>Join Hackatweet today.</p>
       <button onClick={() => handleOpenModal("signup")} className={styles.button}>Sign up</button>
@@ -28,6 +29,7 @@ function Login() {
       {isModalOpen && modalType === "signup" && <SignUp closeModal={handleCloseModal} />}
       {isModalOpen && modalType === "signin" && <SignIn closeModal={handleCloseModal} />}
     </div>
+     </main>
   );
 }
 
