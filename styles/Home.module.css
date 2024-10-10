@@ -1,22 +1,27 @@
-.main {
+.main{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
 }
 
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
+.containerHome{
+background-color: aqua;
+height: 100vh;
+width: 15vw;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.containerTweetAndLast{
+  background-color:bisque;
+  width: 50vw;
+}
+.containerTweet{
+  background-color:bisque;
 }
 
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.containerLastTweets{
+  background-color:chocolate
+}
+
+.containerTrends{
+  background-color:rgb(0, 255, 60);
+  height: 100vh;
+  width: 35vw;
 }
