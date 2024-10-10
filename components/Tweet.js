@@ -1,14 +1,15 @@
-import styles from '../styles/Tweet.module.css';
+import React from 'react';
 
-function Tweet() {
+const Tweet = ({ tweet }) => {
   return (
-    <div>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-         
-        </h1>
-      </main>
+    <div className="tweet">
+      <div className="user-info">
+        <img src={tweet.user.avatar} alt="avatar" />
+        <span>{tweet.user.name} @{tweet.user.handle}</span>
+      </div>
+      <p>{tweet.content}</p>
     </div>
   );
-}
+};
+
 export default Tweet;

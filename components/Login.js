@@ -24,6 +24,7 @@ function Login() {
       <h1>See what's happening</h1>
       <p>Join Hackatweet today.</p>
       <button onClick={() => handleOpenModal("signup")} className={styles.button}>Sign up</button>
+      <p>Already have an account?</p>
       <button onClick={() => handleOpenModal("signin")} className={styles.button}>Sign in</button>
 
       {isModalOpen && modalType === "signup" && <SignUp closeModal={handleCloseModal} />}

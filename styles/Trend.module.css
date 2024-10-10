@@ -1,0 +1,30 @@
+.right-panel {
+    width: 20%;
+    padding: 20px;
+  }
+  
+  .right-panel h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+
+.trends {
+    background-color: #192734;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .trends ul {
+    list-style: none;
+  }
+  
+  .trends ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #1da1f2;
+  }
+  
+  .trends ul li:hover {
+    text-decoration: underline;
+  }

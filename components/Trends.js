@@ -1,14 +1,26 @@
-import styles from '../styles/Trends.module.css';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { filterTweetsByHashtag } from './tweetSlice';
 
-function Trends() {
+const Trends = ({ trends }) => {
+  const dispatch = useDispatch();
+
+  const handleClick = (hashtag) => {
+    dispatch(filterTweetsByHashtag(hashtag));
+  };
+
   return (
-    <div>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-
-        </h1>
-      </main>
+    <div className="trends">
+      <h3>Trends</h3>
+      <ul>
+        {trends.map((trend) => (
+          <li key={trend} onClick={() => handleClick(trend)}>
+            #{trend}
+          </li>
+        ))}
+      </ul>
     </div>
   );
-}
+};
+
 export default Trends;
