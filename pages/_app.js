@@ -9,7 +9,7 @@ import storage from 'redux-persist/lib/storage';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 
-const reducers = combineReducers({ nom_des_reducer });
+const reducers = combineReducers({  });
 const persistConfig = { key: 'Hackatweet', storage };
 
 const store = configureStore({
