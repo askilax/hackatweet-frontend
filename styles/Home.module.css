@@ -1,105 +1,129 @@
-.main{
+.main {
   display: flex;
 }
 
-.containerHome{
-background-color: #151D27;
-color: white;
-font-size: 1.4rem;
-height: 100vh;
-width: 20vw;
+.containerHome {
+  background-color: #151D27;
+  color: white;
+  font-size: 1.1rem;
+  height: 100vh;
+  width: 20vw;
 }
 
-.containerTweetAndLast{
-  background-color:#151D27;
+.containerTweetAndLast {
+  background-color: #151D27;
   width: 50vw;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
 }
-.containerTweet{
-  background-color:#151D27;
+
+.containerTweet {
+  background-color: #151D27;
   height: 25vh;
 }
 
-.containerLastTweets{
-  background-color:#151D27;
+.containerLastTweets {
+  background-color: #151D27;
   height: 75vh;
+  border-top: 1px solid grey;
 }
 
-.containerTrends{
-  background-color:#151D27;
+.containerTrends {
+  background-color: #151D27;
   height: 100vh;
   width: 30vw;
 }
 
-.imgProfil{
-  height: 5vh;
-  width: 3vw;
-border-radius: 250px;
-margin-left: 30px;
+.containerProfil {
+  display: flex;
+  height: 20vh;
 }
 
-.imgProfil:hover{
-cursor: pointer;
-opacity: 0.9;
+.imgProfil {
+  height: 8vh;
+  width: 5vw;
+  border-radius: 250px;
+  margin-left: 1.5vw;
 }
 
-.containerProfil{
+.imgProfil:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.containerProfil {
+  height: 10vh;
   background-color: #151D27;
   justify-content: center;
   align-items: center;
 }
 
-.containerMenu{
+.containerMenu {
   display: flex;
   flex-direction: column;
   height: 88.3vh;
-  margin: 40px;
 }
 
-.imgLogo{
-width: 3vh;
-height: 3vh;
-margin-left:60px;
-margin-bottom: 50px;
-margin-top: 30px;
-cursor: pointer;
+.imgLogo {
+  width: 6vh;
+  height: 6vh;
+  margin-left: 4.5vw;
+  margin-bottom: 4vh;
+  margin-top: 5vh;
+  cursor: pointer;
 }
 
-.imgLogo:hover{
+.imgLogo:hover {
   opacity: 0.7;
 }
 
-.menu{
+.menu {
   list-style-type: none;
 }
 
-.menuLi{
-  padding-bottom: 60px;
+.menuLi {
+  padding-bottom: 4vh;
   color: white;
   transition: color 0.5s ease, background 0.5s ease;
 }
-.menuLi:hover{
+
+.menuLi:hover {
   cursor: pointer;
   background: linear-gradient(90deg, #1DA1F2, #657786);
   -webkit-background-clip: text;
   color: transparent;
 }
-  
-  .btn1{
-    background-color: #1DA1F2;
-    border: 1px solid white;
-    color:white;
-    width: 150px;
-    height: 45px;
-    font-weight: 600;
-    border-radius: 50px;
-    transition: background-color 1s ease, transform 1s ease;
-    transform: scale(1);
-    cursor: pointer;
-  }
-  
-  .btn1:hover{
+
+.btn1 {
+  background-color: #1DA1F2;
+  border: 1px solid white;
+  color: white;
+  width: 7vw;
+  height: 5vh;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: background-color 1s ease, transform 1s ease;
+  transform: scale(1);
+  cursor: pointer;
+}
+
+.btn1:hover {
   background-color: #151D27;
   color: white;
   border: 1px solid white;
   transform: scale(1);
-  }
+}
+
+.containerP{
+  margin:2vh ;
+}
+
+.name{
+  margin-bottom: 0px;
+}
+
+.username{
+  color: rgba(128, 128, 128, 0.764);
+  opacity: 0.8;
+  margin-top: 0px;
+}

@@ -1,4 +1,5 @@
 import styles from '../styles/Home.module.css';
+import Tweets from './Tweets';
 
 
 
@@ -23,11 +24,15 @@ function Home() {
         </div>
         <div className={styles.containerProfil}>
           <img src='./profil.jpg' className={styles.imgProfil}></img>
+<div className={styles.containerP}>
+          <p className={styles.name}>John</p>
+          <p className={styles.username}>@John</p>
+</div>
         </div>
       </div>
       <div className={styles.containerTweetAndLast}>
         <div className={styles.containerTweet}>
-          <Tweet/>
+          <Tweets/>
         </div>
         <div className={styles.containerLastTweets}>
           containerLastTweets
