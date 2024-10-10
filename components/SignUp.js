@@ -26,6 +26,12 @@ function SignUp({ closeModal }) {
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <input
+        type="text"
+        name="firstname"
+        placeholder="Firstname"
+        onChange={handleInputChange}
+      />
+        <input
           type="text"
           name="username"
           placeholder="Username"
