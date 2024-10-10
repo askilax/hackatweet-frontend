@@ -9,7 +9,7 @@ function Home() {
     <div><main className={styles.main}>
       <div className={styles.containerHome}>
         <div className={styles.containerMenu}>
-        <img src='./logotweeter.png' className={styles.imgLogo}></img>
+          <img src='./logotweeter.png' className={styles.imgLogo}></img>
           <ul className={styles.menu}>
             <li className={styles.menuLi}>Accueil</li>
             <li className={styles.menuLi}>Explorer</li>
@@ -24,15 +24,15 @@ function Home() {
         </div>
         <div className={styles.containerProfil}>
           <img src='./profil.jpg' className={styles.imgProfil}></img>
-<div className={styles.containerP}>
-          <p className={styles.name}>John</p>
-          <p className={styles.username}>@John</p>
-</div>
+          <div className={styles.containerP}>
+            <p className={styles.name}>John</p>
+            <p className={styles.username}>@John</p>
+          </div>
         </div>
       </div>
       <div className={styles.containerTweetAndLast}>
         <div className={styles.containerTweet}>
-          <Tweets/>
+          <Tweets />
         </div>
         <div className={styles.containerLastTweets}>
           containerLastTweets

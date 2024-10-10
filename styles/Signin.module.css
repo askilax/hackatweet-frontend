@@ -1,0 +1,36 @@
+.Signin{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4vw
+}
+
+.input{
+    margin-top: 1.5vh;
+    background-color: #151D27;
+    background-attachment: fixed;
+    height: 5vh;
+    border: 1px solid grey;
+    color: white;
+}
+
+.btn{
+    margin-top: 2.5vh; 
+    background-color:white;
+    border: 1px solid #151D27;
+    color: black;
+    width: 15vw;
+    height: 4vh;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: background-color 1s ease, transform 1s ease;
+    transform: scale(1);
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.btn:hover {
+    background-color: #1DA1F2;
+    color: white;
+    border: 1px solid white;
+    transform: scale(1);
+  }

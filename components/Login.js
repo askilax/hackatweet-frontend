@@ -18,19 +18,35 @@ function Login() {
 
   return (
     <main className={styles.main}>
-        <div className={styles.backgroundlogin}></div>
-        <div className={styles.backgroundlogo}></div>
-    <div className={styles.logincontainer}>
-      <h1>See what's happening</h1>
-      <p>Join Hackatweet today.</p>
-      <button onClick={() => handleOpenModal("signup")} className={styles.button}>Sign up</button>
-      <p>Already have an account?</p>
-      <button onClick={() => handleOpenModal("signin")} className={styles.button}>Sign in</button>
+      <div className={styles.backgroundlogin}>
+        <img src='./logotweeter.png' className={styles.imgBackground} alt="Background" />
+      </div>
+      <div className={styles.logincontainer}>
+        <div className={styles.containerLogo}>
+          <img src='./logotweeter.png' className={styles.imgLogo} alt="Logo" />
+        </div>
+        <div className={styles.containerTitle}>
+          <h1>See what's</h1>
+          <h2 className={styles.h1Like}>happening</h2>
+        </div>
+        <div className={styles.containerButton}>
+          <p className={styles.pSignup}>Join Hackatweet today.</p>
+          <button onClick={() => handleOpenModal("signup")} className={styles.button}>Sign up</button>
+          <p className={styles.pSignin}>Already have an account?</p>
+          <button onClick={() => handleOpenModal("signin")} className={styles.button}>Sign in</button>
+        </div>
 
-      {isModalOpen && modalType === "signup" && <SignUp closeModal={handleCloseModal} />}
-      {isModalOpen && modalType === "signin" && <SignIn closeModal={handleCloseModal} />}
-    </div>
-     </main>
+        {isModalOpen && (
+          <div className={styles.popup}>
+            <div className={styles.popupContent}>
+              <span className={styles.close} onClick={handleCloseModal}>&times;</span>
+              {modalType === "signup" && <SignUp closeModal={handleCloseModal} />}
+              {modalType === "signin" && <SignIn closeModal={handleCloseModal} />}
+            </div>
+          </div>
+        )}
+      </div>
+    </main>
   );
 }
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from '../styles/SignUp.module.css';
 
 function SignUp({ closeModal }) {
   const [formData, setFormData] = useState({ username: "", password: "" });
@@ -28,26 +29,29 @@ function SignUp({ closeModal }) {
   return (
     <div className="modal">
       <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.SignUp}>
         <input
         type="text"
         name="firstname"
         placeholder="Firstname"
         onChange={handleInputChange}
+        className={styles.input}
       />
         <input
           type="text"
           name="username"
           placeholder="Username"
           onChange={handleInputChange}
+          className={styles.input}
         />
         <input
           type="password"
           name="password"
           placeholder="Password"
           onChange={handleInputChange}
+          className={styles.input}
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit" className={styles.btn}>Sign Up</button>
       </form>
     </div>
   );
