@@ -1,6 +1,10 @@
 import React from 'react';
+import { useState } from 'react';
 
 function Tweets() {
+const [value,SetValue] = useState('')
+
+
   return (
     <div>
       <main className={styles.main}>
@@ -12,4 +16,4 @@ function Tweets() {
   );
 }
 
-export default Tweet;
+export default Tweets;

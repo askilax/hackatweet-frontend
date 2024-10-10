@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css';
-import 'antd/dist/antd.css'
+
 
 
 
