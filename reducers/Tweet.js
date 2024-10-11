@@ -1,14 +1,16 @@
-
 import { createSlice } from '@reduxjs/toolkit';
+
+
+const initialState = {
+  value: { allTweets: [],  // Tableau vid pour tous les tweets
+    filteredTweets: [],  // tweets qui ressortent en fonction du hashtag
+    loading: false,
+    error: null, },
+};
 
 const tweetSlice = createSlice({
   name: 'tweets',
-  initialState: {
-    allTweets: [],  // Tableau vid pour tous les tweets
-    filteredTweets: [],  // tweets qui ressortent en fonction du hashtag
-    loading: false,
-    error: null,
-  },
+  initialState,
   reducers: {
     setTweets: (state, action) => {
       state.allTweets = action.payload;

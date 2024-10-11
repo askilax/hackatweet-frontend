@@ -31,9 +31,9 @@ function Login() {
         </div>
         <div className={styles.containerButton}>
           <p className={styles.pSignup}>Join Hackatweet today.</p>
-          <button onClick={() => handleOpenModal("signup")} className={styles.button}>Sign up</button>
+          <button onClick={() => handleOpenModal("signup")} className={styles.buttonsignup}>Sign up</button>
           <p className={styles.pSignin}>Already have an account?</p>
-          <button onClick={() => handleOpenModal("signin")} className={styles.button}>Sign in</button>
+          <button onClick={() => handleOpenModal("signin")} className={styles.buttonsignin}>Sign in</button>
         </div>
 
         {isModalOpen && (

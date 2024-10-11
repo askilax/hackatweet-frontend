@@ -1,16 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { filterTweetsByHashtag } from './tweetSlice';
-import Tweet from './Tweet';
+import { filterTweetsByHashtag } from '../reducers/Tweet'; 
+import Tweets from '../components/Tweets'; 
+import { useRouter } from 'next/router'; 
 
 const Hashtag = () => {
-  const [search, setSearch] = useState('');
-  const filteredTweets = useSelector((state) => state.tweets.filteredTweets);
+  const router = useRouter();
+  const { hashtag } = router.query; // Récupérer le hashtag depuis l'URL
+  const [search, setSearch] = useState(hashtag || ''); // Initialiser avec le hashtag de l'URL s'il existe
+  const filteredTweets = useSelector((state) => state.Tweet.filteredTweets);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (hashtag) {
+      // Filtrer les tweets dès que l'URL change
+      dispatch(filterTweetsByHashtag(hashtag));
+      setSearch(hashtag); // Mettre à jour le champ de recherche avec l'ID de l'URL
+    }
+  }, [dispatch, hashtag]);
 
   const handleSearch = (e) => {
     e.preventDefault();
-    dispatch(filterTweetsByHashtag(search));
+    if (search.trim()) {
+      // Rediriger vers une nouvelle URL en modifiant le paramètre dynamique "hashtag"
+      router.push(`/hashtag/${search}`);
+    }
   };
 
   return (
@@ -27,7 +41,7 @@ const Hashtag = () => {
 
       <div className="tweet-list">
         {filteredTweets.length > 0 ? (
-          filteredTweets.map((tweet) => <Tweet key={tweet.id} tweet={tweet} />)
+          filteredTweets.map((tweet) => <Tweets key={tweet.id} tweet={tweet} />)
         ) : (
           <p>No tweets found with #{search}</p>
         )}
