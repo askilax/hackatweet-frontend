@@ -55,7 +55,7 @@ function Home() {
         </div>
       </div>
       <div className={styles.containerTrends}>
-        containerTrends
+        <trends />
       </div>
     </main>
     </div>

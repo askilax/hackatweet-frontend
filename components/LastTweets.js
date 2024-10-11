@@ -28,10 +28,8 @@ const LastTweets = () => {
                                 <p className={styles.date}>· {moment(tweet.timestamp).fromNow()}</p>
                             </div>
                         </div>
-
                         {/* Contenu du tweet */}
-                        <p className={styles.content}>{tweet.text || 'Contenu par défaut du tweet.'}</p>
-
+                        <p className={styles.content}>{tweet.content}</p>
                         {/* Section des icônes (cœur et corbeille) */}
                         <div className={styles.actions}>
                             <FaHeart className={styles.iconHeart} /> {/* Icône de cœur */}
