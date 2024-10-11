@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { setUserData } from "../reducers/user";
 
 function SignIn({ closeModal }) {
-  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [formData, setFormData] = useState({ userName: "", password: "" });
   const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
@@ -17,26 +17,30 @@ function SignIn({ closeModal }) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
-    });
-    const data = await response.json();
+    })
+    const data = await response.json()
+    console.log(data);
+    
     if (data.token) {
-      const userData= {
-      token:data.token,
-      firstName: data.firstName,
-      userName: data.userName,
-    };
-    dispatch(setUserData(userData))
-    window.location.href = "/Home";
+      const userData = {
+        token: data.token,
+        firstName: data.firstName,
+        userName: data.userName,
+      };
+      dispatch(setUserData(userData))
+      window.location.href = "/Home";
     }
-  };
+  }
+
+
 
   return (
     <div className="modal">
       <h2>Sign In</h2>
       <form onSubmit={handleSubmit} className={styles.SignUp}>
-        <input
+      <input
           type="text"
-          name="username"
+          name="userName"
           placeholder="Username"
           onChange={handleInputChange}
           className={styles.input}

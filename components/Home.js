@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux';
 
 
 function Home() {
-  const [tweets, setTweets] = useState([]);
     const firstName = useSelector((state) => state.user.firstName);
     const userName = useSelector((state) => state.user.userName);
 
@@ -16,7 +15,7 @@ function Home() {
       const newTweet = {
         id: Date.now(),
         content,
-        timestamp: new Date().toLocaleString(),
+        timestamp: new Date().toISOString(),
       };
       setTweets([newTweet, ...tweets]);
     };
@@ -52,7 +51,7 @@ function Home() {
         <Tweets addTweet={addTweet} />
         </div>
         <div className={styles.containerLastTweets}>
-        <LastTweets tweets={tweets} />
+        <LastTweets />
         </div>
       </div>
       <div className={styles.containerTrends}>

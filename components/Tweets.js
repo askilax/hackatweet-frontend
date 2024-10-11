@@ -1,10 +1,11 @@
 import styles from '../styles/Tweets.module.css';
-import React from 'react';
-import { useState } from 'react';
-import LastTweets from './LastTweets';
-
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setTweets } from '../reducers/tweets';
 
 function Tweets({ addTweet }) {
+  const dispatch = useDispatch();
+  const allTweets = useSelector((state) => state.tweets.value.allTweets);
   const [value, setValue] = useState('');
   const maxLength = 280;
 
@@ -16,7 +17,12 @@ function Tweets({ addTweet }) {
 
   const handleTweet = () => {
     if (value.trim() !== '') {
-      addTweet(value);
+      const newTweet = {
+        id: Date.now(),
+        content: value,
+        timestamp: new Date().toISOString(),
+      };
+      dispatch(setTweets([...allTweets, newTweet]));
       setValue('');
     }
   };

@@ -23,6 +23,8 @@
 }
 
 .containerLastTweets {
+  display: flex;
+  flex-direction:column;
   background-color: #151D27;
   height: 75vh;
   border-top: 1px solid grey;
