@@ -7,7 +7,7 @@ import { FaHeart, FaTrash } from 'react-icons/fa'; // Importer des icônes
 moment.locale('fr');
 
 const LastTweets = () => {
-    const dispatch = useDispatch(); // Utiliser pour déclencher les actions Redux
+    const dispatch = useDispatch(); 
     const firstName = useSelector((state) => state.user.firstName);
     const userName = useSelector((state) => state.user.userName);
     const allTweets = useSelector((state) => state.tweets.value.allTweets || []);
@@ -17,6 +17,7 @@ const LastTweets = () => {
 
     // Fonction pour supprimer un tweet
     const handleDeleteTweet = (id) => {
+        console.log('Deleting tweet with id:', id); // Vérifie si l'id est correct
         dispatch({
             type: 'tweets/deleteTweet',
             payload: id
@@ -32,7 +33,7 @@ const LastTweets = () => {
                         tweet={tweet}
                         firstName={firstName}
                         userName={userName}
-                        onDelete={() => handleDeleteTweet(tweet.id)} // Passer la fonction de suppression
+                        onDelete={() => handleDeleteTweet(tweet.id)} 
                     />
                 ))
             ) : (
@@ -42,12 +43,11 @@ const LastTweets = () => {
     );
 };
 
-// Composant pour un tweet individuel avec gestion des likes et suppression
 const Tweet = ({ tweet, firstName, userName, onDelete }) => {
-    const [likes, setLikes] = useState(0); // État pour gérer le nombre de likes
+    const [likes, setLikes] = useState(0);
 
     const handleLikeClick = () => {
-        setLikes(likes + 1); // Incrémente le compteur de likes à chaque clic
+        setLikes(likes + 1); 
     };
 
     return (
@@ -67,9 +67,9 @@ const Tweet = ({ tweet, firstName, userName, onDelete }) => {
 
             {/* Section des icônes (cœur et corbeille) */}
             <div className={styles.actions}>
-                <FaHeart className={styles.iconHeart} onClick={handleLikeClick} /> {/* Icône de cœur avec gestion du clic */}
-                <span>{likes}</span> {/* Affiche le nombre de likes */}
-                <FaTrash className={styles.iconTrash} onClick={onDelete} /> {/* Icône de corbeille avec suppression */}
+                <FaHeart className={styles.iconHeart} onClick={handleLikeClick} /> {/* Incrémente les likes */}
+                <span>{likes}</span>
+                <FaTrash className={styles.iconTrash} onClick={onDelete} /> {/* Gère la suppression */}
             </div>
         </div>
     );
