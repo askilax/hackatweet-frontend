@@ -13,7 +13,6 @@ import user, { setUserData } from '../reducers/user';
 
 const reducers = combineReducers({ Tweets, user });
 const persistConfig = { key: 'Hackatweet', storage };
-
 const store = configureStore({
   reducer: persistReducer(persistConfig, reducers),
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),

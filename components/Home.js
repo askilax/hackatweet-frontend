@@ -1,11 +1,16 @@
 import styles from '../styles/Home.module.css';
 import LastTweets from './LastTweets';
 import Tweets from './Tweets';
+import { useSelector } from 'react-redux';
 
 
 
 
 function Home() {
+
+    const firstName = useSelector((state) => state.user.firstName);
+    const userName = useSelector((state) => state.user.userName);
+
   return (
     <div><main className={styles.main}>
       <div className={styles.containerHome}>
@@ -26,8 +31,8 @@ function Home() {
         <div className={styles.containerProfil}>
           <img src='./profil.jpg' className={styles.imgProfil}></img>
           <div className={styles.containerP}>
-            <p className={styles.name}>John</p>
-            <p className={styles.username}>@John</p>
+            <p className={styles.name}>{firstName || John}</p>
+            <p className={styles.username}>{userName || '@john'}</p>
           </div>
         </div>
       </div>
