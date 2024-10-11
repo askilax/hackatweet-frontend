@@ -1,16 +1,25 @@
 import styles from '../styles/Tweets.module.css';
 import React from 'react';
 import { useState } from 'react';
+import LastTweets from './LastTweets';
 
-function Tweets() {
-  const [value, SetValue] = useState('')
+
+function Tweets({ addTweet }) {
+  const [value, setValue] = useState('');
   const maxLength = 280;
 
   const handleChange = (e) => {
-    if (e.target.value.length < maxLength) {
-      SetValue(e.target.value);
+    if (e.target.value.length <= maxLength) {
+      setValue(e.target.value);
     }
-  }
+  };
+
+  const handleTweet = () => {
+    if (value.trim() !== '') {
+      addTweet(value);
+      setValue('');
+    }
+  };
 
   return (
     <div className={styles.containerTweets}>
@@ -19,11 +28,16 @@ function Tweets() {
           Home
         </h1>
         <div className={styles.Input}>
-          <input className={styles.textHome} type='text' placeholder="What's up" maxLength={maxLength} onChange={handleChange} />
+          <input className={styles.textHome}
+            type='text'
+            placeholder="What's up"
+            maxLength={maxLength}
+            value={value}
+            onChange={handleChange} />
         </div>
         <div className={styles.pBtn}>
           <p className={styles.p}>{value.length}/{maxLength}</p>
-          <button type='submit' className={styles.btn1}>Tweet</button>
+          <button type='button' className={styles.btn1} onClick={handleTweet}>Tweet</button>
         </div>
       </main>
     </div>

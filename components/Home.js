@@ -1,3 +1,4 @@
+import{ useState } from 'react';
 import styles from '../styles/Home.module.css';
 import LastTweets from './LastTweets';
 import Tweets from './Tweets';
@@ -7,9 +8,19 @@ import { useSelector } from 'react-redux';
 
 
 function Home() {
-
+  const [tweets, setTweets] = useState([]);
     const firstName = useSelector((state) => state.user.firstName);
     const userName = useSelector((state) => state.user.userName);
+
+    const addTweet = (content) => {
+      const newTweet = {
+        id: Date.now(),
+        content,
+        timestamp: new Date().toLocaleString(),
+      };
+      setTweets([newTweet, ...tweets]);
+    };
+
 
   return (
     <div><main className={styles.main}>
@@ -38,12 +49,10 @@ function Home() {
       </div>
       <div className={styles.containerTweetAndLast}>
         <div className={styles.containerTweet}>
-          <Tweets />
+        <Tweets addTweet={addTweet} />
         </div>
         <div className={styles.containerLastTweets}>
-          <LastTweets />
-          <LastTweets />
-          <LastTweets />
+        <LastTweets tweets={tweets} />
         </div>
       </div>
       <div className={styles.containerTrends}>
