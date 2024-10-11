@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import styles from '../styles/Signin.module.css';
+import { useDispatch } from "react-redux";
+import { setUserData } from "../reducers/user";
 
 function SignIn({ closeModal }) {
   const [formData, setFormData] = useState({ username: "", password: "" });
+  const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,8 +20,13 @@ function SignIn({ closeModal }) {
     });
     const data = await response.json();
     if (data.token) {
-      localStorage.setItem("token", data.token);
-      window.location.href = "/Home";
+      const userData= {
+      token:data.token,
+      firstName: data.firstName,
+      userName: data.userName,
+    };
+    dispatch(setUserData(userData))
+    window.location.href = "/Home";
     }
   };
 
