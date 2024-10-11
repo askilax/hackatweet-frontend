@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router'
+import Hashtag from '../../components/Hashtag'
  
 export default function hashtagPage() {
-  const router = useRouter()
+
   return <Hashtag />
 }

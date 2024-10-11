@@ -13,16 +13,16 @@ const tweetSlice = createSlice({
   initialState,
   reducers: {
     setTweets: (state, action) => {
-      state.allTweets = action.payload;
+      state.value.allTweets = action.payload;
     },
     filterTweetsByHashtag: (state, action) => {
       const hashtag = action.payload;
-      state.filteredTweets = state.allTweets.filter(tweet =>
+      state.value.filteredTweets = state.value.allTweets.filter(tweet =>
         tweet.content.includes(`#${hashtag}`)
       );
     },
     clearFilteredTweets: (state) => {
-      state.filteredTweets = [];
+      state.value.filteredTweets = [];
     },
   },
 });

@@ -1,54 +1,106 @@
-.title {
-  color: white;
-  margin-top: 0px;
+/* Hashtag Page */
+.hashtag-page {
+  display: flex;
+  justify-content: space-between;
   padding: 20px;
 }
 
-.textHome {
-  justify-content: center;
-  font-size: 1.2rem;
-  color: white;
-  width: 40vw;
-  height: 35px;
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 250px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
   border: none;
-  outline: none;
-  border-bottom: 1px solid grey;
-  background-color: #151D27;
+  margin-right: 10px;
 }
 
-.Input {
-text-align: center;
-}
-
-.pBtn {
-display: flex;
-justify-content: end;
-margin-right: 4vw;
-}
-
-.btn1 {
+.search-bar button {
+  padding: 10px 15px;
   background-color: #1DA1F2;
-  border: 1px solid white;
+  border: none;
+  border-radius: 5px;
   color: white;
-  width: 7vw;
-  height: 5vh;
-  font-weight: 600;
-  border-radius: 50px;
-  transition: background-color 1s ease, transform 1s ease;
-  transform: scale(1);
+  font-size: 16px;
   cursor: pointer;
-  margin-top: 1vh;
 }
 
-.btn1:hover {
-  background-color: #151D27;
-  color: white;
-  border: 1px solid white;
-  transform: scale(1);
+.search-bar button:hover {
+  background-color: #1483b7;
 }
 
-.p{
-  color: white;
-  font-weight: 500;
-  margin-right: 2vw;
+/* Liste des tweets */
+.tweet-list {
+  flex-grow: 1;
+  background-color: #242526;
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 20px;
+  height: 500px;
+  overflow-y: auto;
+}
+
+.tweet-list p {
+  color: #bbb; 
+  text-align: center;
+}
+
+.tweet {
+  background-color: #3A3B3C;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.tweet p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.hashtags {
+  margin-top: 10px;
+}
+
+.hashtag {
+  background-color: #444;
+  color: #1DA1F2;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+/* section des tendances */
+.trends-section {
+  width: 250px;
+  background-color: #242526;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.trends-section h3 {
+  margin-top: 0;
+  color: #ddd;
+}
+
+.trends-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.trends-section li {
+  background-color: #3A3B3C;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: #1DA1F2;
+  cursor: pointer;
+}
+
+.trends-section li:hover {
+  background-color: #444;
 }
