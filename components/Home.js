@@ -31,7 +31,7 @@ function Home() {
         <div className={styles.containerProfil}>
           <img src='./profil.jpg' className={styles.imgProfil}></img>
           <div className={styles.containerP}>
-            <p className={styles.name}>{firstName || John}</p>
+            <p className={styles.name}>{firstName || 'John'}</p>
             <p className={styles.username}>{userName || '@john'}</p>
           </div>
         </div>

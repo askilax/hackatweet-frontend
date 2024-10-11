@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { filterTweetsByHashtag } from './tweetSlice';
+import { filterTweetsByHashtag } from '../reducers/tweets';
 
 const Trends = ({ trends }) => {
   const dispatch = useDispatch();

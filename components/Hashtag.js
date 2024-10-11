@@ -42,7 +42,7 @@ const Hashtag = () => {
     }
   };
 
-  // Example trends data, can be passed from props if dynamic
+ 
   const trends = ['hackatweet', 'first', 'cenation']; 
 
   return (
@@ -68,7 +68,9 @@ const Hashtag = () => {
       </div>
 
       {/* section de droite pour les tendances */}
+      <div>
       <Trends trends={trends} /> 
+      </div>
     </div>
   );
 };
