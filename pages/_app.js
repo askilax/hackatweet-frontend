@@ -7,10 +7,11 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import storage from 'redux-persist/lib/storage';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import Tweet from '../reducers/Tweet';
+import Tweets from '../reducers/tweets';
+import user, { setUserData } from '../reducers/user';
 
 
-const reducers = combineReducers({ Tweet });
+const reducers = combineReducers({ Tweets, user });
 const persistConfig = { key: 'Hackatweet', storage };
 
 const store = configureStore({
