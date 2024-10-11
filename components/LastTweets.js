@@ -11,6 +11,7 @@ const LastTweets = ({ tweets }) => {
     const firstName = useSelector((state) => state.user.firstName);
     const userName = useSelector((state) => state.user.userName);
     const allTweets = useSelector((state) => state.tweets.value.allTweets || []);
+    const filteredTweets = useSelector((state) => state.tweets.value.filteredTweets);
 
     const sortedTweets = [...allTweets].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 

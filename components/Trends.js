@@ -4,6 +4,7 @@ import { filterTweetsByHashtag } from './tweetSlice';
 
 const Trends = ({ trends }) => {
   const dispatch = useDispatch();
+  const hashtags = useSelector((state) => state.tweets.value.hashtags);
 
   const handleClick = (hashtag) => {
     dispatch(filterTweetsByHashtag(hashtag));
