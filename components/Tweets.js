@@ -23,7 +23,7 @@ function Tweets() {
         </div>
         <div className={styles.pBtn}>
           <p className={styles.p}>{value.length}/{maxLength}</p>
-          <button className={styles.btn1}>Tweet</button>
+          <button type='submit' className={styles.btn1}>Tweet</button>
         </div>
       </main>
     </div>
