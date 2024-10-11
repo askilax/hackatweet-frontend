@@ -1,8 +1,7 @@
 .tweet {
-
   border-bottom: 1px solid grey;
   width: 49.8vw;
-  height: 30vh;
+  height: 20vh;
   padding: 10px;
 }
 
@@ -30,17 +29,14 @@ margin: 1vw;
   margin-right: 1vw;
 }
 
-.data {
+.date {
   color: grey;
 }
 
-.p {
+.content{
   color: white;
-}
-
-.content {
+  font-size: 16px;
   margin-bottom: 10px;
-  color: #ddd;
 }
 
 .actions {
@@ -67,4 +63,9 @@ margin: 1vw;
 
 .iconTrash:hover {
   transform: scale(1.2);
+}
+
+.content {
+  margin-bottom: 10px;
+  color: #ddd;
 }

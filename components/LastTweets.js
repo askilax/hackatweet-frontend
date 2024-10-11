@@ -1,35 +1,49 @@
+import React from 'react';
 import styles from '../styles/LastTweets.module.css';
 import { useSelector } from 'react-redux';
+import moment from 'moment';
+import 'moment/locale/fr';
 import { FaHeart, FaTrash } from 'react-icons/fa'; // Importer des icônes
+moment.locale('fr');
 
-const LastTweets = ({ tweet }) => {
+const LastTweets = () => {
     const firstName = useSelector((state) => state.user.firstName);
     const userName = useSelector((state) => state.user.userName);
+    const allTweets = useSelector((state) => state.tweets.value.allTweets || []);
+    
+    // Trier les tweets par date (du plus récent au plus ancien)
+    const sortedTweets = [...allTweets].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
     return (
-        <div className={styles.tweet}>
-            {/* Informations utilisateur */}
-            <div className={styles.userInfo}>
-                <img src='./profil.jpg' alt="avatar" className={styles.imgProfil} />
-                <div>
-                    <p className={styles.name}>{firstName || 'John'}</p>
-                    <p className={styles.username}>{userName || '@John'}</p>
-                    <p className={styles.data}>· il y a 15 minutes</p>
-                </div>
-            </div>
+        <div className={styles.tweetsList}>
+            {sortedTweets.length > 0 ? (
+                sortedTweets.map((tweet) => (
+                    <div key={tweet.id} className={styles.tweet}>
+                        {/* Informations utilisateur */}
+                        <div className={styles.userInfo}>
+                            <img src='./profil.jpg' alt="avatar" className={styles.imgProfil} />
+                            <div>
+                                <p className={styles.name}>{firstName || 'John'}</p>
+                                <p className={styles.username}>{userName || '@John'}</p>
+                                <p className={styles.date}>· {moment(tweet.timestamp).fromNow()}</p>
+                            </div>
+                        </div>
 
-            {/* Contenu du tweet */}
-            <p className={styles.content}>{tweet.text || 'Contenu par défaut du tweet.'}</p>
+                        {/* Contenu du tweet */}
+                        <p className={styles.content}>{tweet.text || 'Contenu par défaut du tweet.'}</p>
 
-            {/* Section des icônes (cœur et corbeille) */}
-            <div className={styles.actions}>
-                <FaHeart className={styles.iconHeart} /> {/* Icône de cœur */}
-                <FaTrash className={styles.iconTrash} /> {/* Icône de corbeille */}
-            </div>
-            <p className={styles.p}>Le monde évolue rapidement avec la technologie. Chaque jour, de nouvelles innovations transforment notre façon de vivre, de communiquer et de travailler. Dans ce contexte, il est essentiel de rester informé et d'apprendre en continu pour s'adapter et tirer parti des opportunités que cela offre.</p>
+                        {/* Section des icônes (cœur et corbeille) */}
+                        <div className={styles.actions}>
+                            <FaHeart className={styles.iconHeart} /> {/* Icône de cœur */}
+                            <FaTrash className={styles.iconTrash} /> {/* Icône de corbeille */}
+                        </div>
+                    </div>
+                ))
+            ) : (
+                <p className={styles.noTweets}>Aucun tweet pour le moment</p>
+            )}
         </div>
     );
 };
 
 export default LastTweets;
-

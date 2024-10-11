@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import storage from 'redux-persist/lib/storage';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import tweets from '../reducers/tweets';
-import user, { setUserData } from '../reducers/user';
+import user from '../reducers/user';
 
 
 const reducers = combineReducers({ tweets, user });
