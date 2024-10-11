@@ -1,6 +1,5 @@
 .tweet {
-  display: flex;
-  flex-direction: column;
+
   border-bottom: 1px solid grey;
   width: 49.8vw;
   height: 30vh;
@@ -15,16 +14,20 @@
   margin-top: 2.5vh;
 }
 
-.user-info {
+.userInfo {
   display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .name {
   color: white;
+margin: 1vw;
 }
 
 .username {
   color: grey;
+  margin-right: 1vw;
 }
 
 .data {
